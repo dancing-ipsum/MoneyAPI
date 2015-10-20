@@ -1,6 +1,6 @@
 name: MoneyAPI
-api: [1.0.0]
-version: "1.0"
+api: [1.12.0]
+version: "1.1_Build#1"
 main: MA\Main
 author: SavionLegendZzz
-description: A MoneyAPI plugin you cam edit the source code or do what ever you want :D
+description: A MoneyAPI plugin you ca edit the source code or do what ever you want :D (also includes "EXP")
