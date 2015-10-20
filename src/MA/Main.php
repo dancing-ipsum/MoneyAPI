@@ -27,11 +27,25 @@ public function addMoney(Player $p, $amount){
 		$this->PlayerFile->set("Money",$amount);
 	$this->PlayerFile->save();
 }
+public function takeMoney(Player $p, $amount){
+				$ign = $p->getName();
+			$this->PlayerFile = new Config($this->getDataFolder()."Players/".$ign.".yml", Config::YAML);
+$m = $this->PlayerFile->get("Money");
+                $a = $m - $amount;
+                $this->PlayerFile->set("Money", $a);
+	$this->PlayerFile->save();
+}
+
+public function getMoney(Player $p){
+				$ign = $p->getName();
+			$this->PlayerFile = new Config($this->getDataFolder()."Players/".$ign.".yml", Config::YAML);
+		//someone want to help?
+}
 public function onPlayerLogin(PlayerPreLoginEvent $event){
         $ign = $event->getPlayer()->getName();
         $player = $event->getPlayer();
         $file = ($this->getDataFolder()."Players/".$ign.".yml");  
-            if(!file_exists($file)){
+        if(!file_exists($file)){
                 $this->PlayerFile = new Config($this->getDataFolder()."Players/".$ign.".yml", Config::YAML);
                 		$this->PlayerFile->set("Money",0);
                 $this->PlayerFile->save();
