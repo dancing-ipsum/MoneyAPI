@@ -17,7 +17,7 @@ public function onEnable(){
 $this->getServer()->getLogger()->info("[MoneyAPI]Loaded!");
 
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
-		 @mkdir($this->getDataFolder());
+@mkdir($this->getDataFolder());
 @mkdir($this->getDataFolder()."Players/");	
 }
 ////////////////MONEY////////////////
